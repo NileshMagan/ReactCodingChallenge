@@ -1,0 +1,1 @@
+export const BASE_APPLE_API_URL = "https://itunes.apple.com/search?term=";

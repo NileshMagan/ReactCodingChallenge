@@ -1,0 +1,31 @@
+$theme-background-color: white;
+$theme-background-color-gradient: #0093E9;
+$theme-background-image-gradient: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+;
+
+.home-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: $theme-background-color-gradient;
+    background-image: $theme-background-image-gradient;
+
+    .home-container {
+        display: flex;
+        
+        .home-contents {
+            background-color: $theme-background-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+        }
+    }
+}

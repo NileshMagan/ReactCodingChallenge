@@ -1,10 +1,48 @@
 import logo from './logo.svg';
-import './App.css';
+import ItemList from './components/item-list/item-list';
+import InputText from './components/input-text/input-text';
 
-function App() {
+
+
+
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+
+import reducer from './reducers/reducers'
+import mySaga from './sagas/sagas'
+import Home from './pages/home';
+
+// create the saga middleware
+const sagaMiddleware = createSagaMiddleware()
+// mount it on the Store
+const store = createStore(
+  reducer,
+  applyMiddleware(sagaMiddleware)
+)
+
+// then run the saga
+sagaMiddleware.run(mySaga)
+
+// render the application
+
+
+
+
+
+// function App() {
+const App = () => {
+
+  // onSomeButtonClicked() {
+  //   const { userId, dispatch } = this.props
+  //   dispatch({type: 'USER_FETCH_REQUESTED', payload: {userId}})
+  // }
+
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <InputText />
+      <ItemList /> */}
+      <Home />
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +55,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
